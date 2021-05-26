@@ -7,10 +7,10 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        this open academy module is for odoo technical training
     """,
 
-    'author': "My Company",
+    'author': "__s_a_r_v_a_n_a___",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -27,7 +27,8 @@
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'views/openacademy.xml'
+        'views/openacademy.xml',
+        'views/session.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
