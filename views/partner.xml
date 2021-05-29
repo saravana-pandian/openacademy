@@ -9,6 +9,7 @@
         <page string="Sessions">
           <group>
             <field name="session_ids"/>
+            <field name="instructor"/>
           </group>
         </page>
       </notebook>

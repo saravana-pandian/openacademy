@@ -12,6 +12,7 @@
               <field name="duration"/>
               <field name="seats"/>
               <field name="attendee_ids"/>
+              <field name="course_id"/>
               <field name="taken_seats"/>
               <field name="active"/>
               <field name="state"/>
@@ -31,6 +32,7 @@
               <field name="duration"/>
               <field name="seats"/>
               <field name="attendee_ids"/>
+              <field name="course_id"/>
               <field name="taken_seats"/>
               <field name="active"/>
               <field name="state"/>
