@@ -33,7 +33,47 @@
                 </form>
             </field>
         </record>
+
+
+        <record id="openacademy_search" model="ir.ui.view">
+            <field name="name">openacademy.course.search</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="description"/>
+                </search>
+            </field>
+        </record>
        
+       <record id="openacademy_kanban" model="ir.ui.view">
+            <field name="name">openacademy.course.kanban</field>
+            <field name="model">openacademy.course</field>
+            <field name="arch" type="xml">
+                 <kanban class="o_kanban_mobile" sample="1">
+                    
+                    <field name="name"/>
+                    <field name="description"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="oe_kanban_record_details">
+                                   <ul>
+                                       <li>
+                                           Actor Name : <field name="name"/>
+                                        </li>
+                                       <li>
+                                            Description : <field name="description"/>
+                                       </li>
+
+                                   </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
 
 
        
@@ -44,7 +84,7 @@
     <record model="ir.actions.act_window" id="course_list_action">
       <field name="name">Courses</field>
       <field name="res_model">openacademy.course</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
       <field name="help" type="html">
       	<p class="o_view_nocontent_smiling_face">
       		Create the Course Now!!!

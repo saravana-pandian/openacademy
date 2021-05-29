@@ -4,19 +4,36 @@
     <field name="name">session.form</field>
     <field name="model">openacademy.session</field>
     <field name="arch" type="xml">
-      <form string="Session Form">
+       <form string="Session Form">
+        <header>
+          <button name="action_draft" type="object"
+                  string="Reset to draft"
+                  states="confirmed,done"/>
+          <button name="action_confirm" type="object"
+                  string="Confirm" states="draft"
+                  class="oe_highlight"/>
+          <button name="action_done" type="object"
+                  string="Mark as done" states="confirmed"
+                  class="oe_highlight"/>
+          <field name="state" widget="statusbar"/>
+        </header>
         <sheet>
           <group>
+            <group string="General">
+              <field name="course_id"/>
               <field name="name"/>
+              <field name="instructor_id"/>
+              <field name="active"/>
+            </group>
+            <group string="Schedule">
               <field name="start_date"/>
               <field name="duration"/>
               <field name="seats"/>
-              <field name="attendee_ids"/>
-              <field name="course_id"/>
-              <field name="taken_seats"/>
-              <field name="active"/>
-              <field name="state"/>
+              <field name="taken_seats" widget="progressbar"/>
             </group>
+          </group>
+          <label for="attendee_ids"/>
+          <field name="attendee_ids"/>
         </sheet>
       </form>
     </field>
@@ -40,6 +57,7 @@
             </field>
         </record>
 
+       
 
   <record model="ir.actions.act_window" id="Session_list_action">
       <field name="name">session.form</field>

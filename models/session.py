@@ -6,7 +6,7 @@ class session(models.Model):
     name = fields.Char(required=True)
     start_date = fields.Date(default=fields.Date.today)
     duration = fields.Float(digits=(6, 2), help="Duration in days")
-    seats = fields.Integer(string="Number of seats")
+    seats = fields.Integer(string="Number of seats", default='10')
     instructor_id = fields.Many2one(
         comodel_name='res.partner',
         string="Instructor",
@@ -24,6 +24,7 @@ class session(models.Model):
     active = fields.Boolean(default=True)
     state = fields.Selection(
         selection='_selection_state',
+        readonly = "True",
         default='draft',
     )
 
@@ -65,3 +66,14 @@ class session(models.Model):
                     'message': _("Increase seats or remove excess attendees"),
                 },
             }
+    @api.model
+    def action_draft(self):
+        self.write({'state': 'draft'})
+
+    @api.model
+    def action_confirm(self):
+        self.write({'state': 'confirmed'})
+
+    @api.model
+    def action_done(self):
+        self.write({'state': 'done'})
