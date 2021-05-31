@@ -13,15 +13,17 @@
     'sequence': "-1000",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['base', 'hr', 'website_slides'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
+        'wizard/regist.xml',
         'views/views.xml',
         'views/templates.xml',
         'views/openacademy.xml',
         'views/session.xml',
         'views/partner.xml'
+        
     ],
     'demo': [
         'demo/demo.xml',

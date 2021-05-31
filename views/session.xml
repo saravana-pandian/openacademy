@@ -94,6 +94,7 @@
     </record>
 
  <menuitem id="session_menu" name="sessions" parent="openacademy_menu" action="Session_list_action"/>
+ <menuitem id="register_menu" name="Multi Attendce" parent="openacademy_menu" action="action_openacademy_register_wizard"/>
 
 
 </odoo>
