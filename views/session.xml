@@ -59,13 +59,36 @@
 
        
 
+        <record id="openacademy_session_calendar" model="ir.ui.view">
+            <field name="name">session.calendar</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <calendar string="calendar View" date_start="start_date">
+                    <field name="name"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="openacademy_session_graph" model="ir.ui.view">
+            <field name="name">session.graph</field>
+            <field name="model">openacademy.session</field>
+            <field name="arch" type="xml">
+                <graph string="Total seats taken by ids">
+                    <field name="seats"/>
+                    <field name="attendee_ids" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+      
+       
+
   <record model="ir.actions.act_window" id="Session_list_action">
       <field name="name">session.form</field>
       <field name="res_model">openacademy.session</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
       <field name="help" type="html">
         <p class="o_view_nocontent_smiling_face">
-            Create the Course Now!!!
+            Create the Session Now!!!
         </p>
       </field>
     </record>
