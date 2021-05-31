@@ -1,0 +1,15 @@
+import xmlrpc.client
+
+root = 'http://%s:%d/xmlrpc/' % (localhost, 8069)
+
+uid = xmlrpc.client.ServerProxy(root + 'common').login(odoo14, odoo14, 1605)
+print("Logged in as %s (uid: %d)" % (saravana, uid))
+
+
+sock = xmlrpc.client.ServerProxy(root + 'object')
+args = {
+    'color' : 8,
+    'memo' : 'This is a note',
+    'create_uid': uid,
+}
+note_id = sock.execute(DB, uid, PASS, 'note.note', 'create', args)

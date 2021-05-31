@@ -22,7 +22,8 @@
         'views/templates.xml',
         'views/openacademy.xml',
         'views/session.xml',
-        'views/partner.xml'
+        'views/partner.xml',
+        'views/report.xml'
         
     ],
     'demo': [
